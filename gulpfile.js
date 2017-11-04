@@ -15,7 +15,10 @@ gulp.task('serve', ['copy','serve-watch'], function(){
 });
 
 // watch
-gulp.task('watch', ['move-bootstrap', 'move-popper', 'move-jquery'], function(){
+gulp.task('watch', [
+	'move-bootstrap', 'move-popper', 'move-jquery',
+	'sass', 'postcss', 'babel', 'html'
+], function(){
 	gulp.watch("src/sass/*.scss", ['sass']);					// sass
 	gulp.watch("build/precss/*.css", ['postcss']);				// postcss
 	gulp.watch("src/js/app/**/*.js", ['babel']);				// Babel js
